@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'techPractice4term.apps.Techpractice4TermConfig',
+    'firstapp'
 ]
 
 MIDDLEWARE = [
