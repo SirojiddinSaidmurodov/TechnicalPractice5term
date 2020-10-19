@@ -7,5 +7,5 @@ def post_list(request):
     return render(request, 'firstapp/post_list.html', {})
 
 
-def about_page(requst):
-    return render(requst, 'firstapp/about.html')
+def about_page(request):
+    return render(request, 'firstapp/about.html')
