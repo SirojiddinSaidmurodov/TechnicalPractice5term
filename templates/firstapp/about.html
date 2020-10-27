@@ -1,4 +1,6 @@
 <html>
+
+{% load static %}
 <title>About us</title>
 <style>
     .st {
@@ -8,6 +10,9 @@
     }
 </style>
 <body>
+<p style="text-align: center">
+    <img style="height: 400px;border-radius: 200px" src="{% static "images/20200830_220220 (2).jpg" %}">
+</p>
 <div class="st">
     <h1>Hi there, I'm Sirojiddin 👋</h1><br>
     I am a student of [KFU](https://kpfu.ru)<br>
@@ -51,11 +56,13 @@
     <!-- Your github readme stats
     You can use this api: https://github.com/anuraghazra/github-readme-stats
     -->
-    <img src="https://github-readme-stats.vercel.app/api?username=sirojiddinsaidmurodov&count_private=true&show_icons=true"
-         alt="">
-
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sirojiddinsaidmurodov&layout=compact"
-         alt="">
+    <p>
+        <img src="https://github-readme-stats.vercel.app/api?username=sirojiddinsaidmurodov&count_private=true&show_icons=true"
+             alt="">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sirojiddinsaidmurodov&layout=compact&card_width=445&langs_count=11"
+             alt=""></p>
+    <script src="{% static "js/script.js" %}"></script>
+    <input type="button" onclick="preferences()" value="Show"><label id="pref">Скрытый текст</label>
 </div>
 </body>
 </html>
