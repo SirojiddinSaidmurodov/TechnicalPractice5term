@@ -28,3 +28,9 @@ def post(request):
     else:
         form = PostForm()
     return render(request, 'firstapp/post_form.html', {'form': form})
+
+
+def filter_list(request):
+    query = request.GET.get("search")
+    text = Post.objects.filter(title__contains=query)
+    return render(request, "firstapp/index.html", {"text": text})

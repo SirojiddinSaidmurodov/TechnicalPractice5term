@@ -10,17 +10,27 @@
 </head>
 <body>
 <div class="container">
+<h1>Сообщения</h1>
+        <form method="get" action="/list/filter">
+            <div class="input-group mb-3">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="search">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+            </div>
+        </form>
+
     <h2>Список сообщений</h2>
     <table class="table">{% if text.count > 0 %}
         <thead class="thead-dark">
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Наименование</th>
-                <th scope="col">текст</th>
-                <th scope="col">Дата публикации новости</th>
-            </tr>{% for post in text %}
-        </thead>
-        <tbody>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Наименование</th>
+            <th scope="col">текст</th>
+            <th scope="col">Дата публикации новости</th>
+        </tr>{% for post in text %}
+            </thead>
+            <tbody>
             <tr>
                 <th scope="row">{{ post.author }}</th>
                 <td>{{ post.title }}</td>
