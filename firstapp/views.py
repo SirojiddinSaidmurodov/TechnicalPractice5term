@@ -14,7 +14,11 @@ def about_page(request):
 
 
 def index(request):
-    text = Post.objects.all()
+    query = request.GET.get("search")
+    if query is not None:
+        text = Post.objects.filter(title__contains=query)
+    else:
+        text = Post.objects.all()
     return render(request, "firstapp/index.html", {"text": text})
 
 
@@ -28,9 +32,3 @@ def post(request):
     else:
         form = PostForm()
     return render(request, 'firstapp/post_form.html', {'form': form})
-
-
-def filter_list(request):
-    query = request.GET.get("search")
-    text = Post.objects.filter(title__contains=query)
-    return render(request, "firstapp/index.html", {"text": text})
