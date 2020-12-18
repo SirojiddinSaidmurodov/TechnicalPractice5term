@@ -33,7 +33,7 @@
             <tbody>
             <tr>
                 <th scope="row">{{ post.author }}</th>
-                <td>{{ post.title }}</td>
+                <td><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></td>
                 <td>{{ post.text }}</td>
                 <td>{{ post.publish_date }}</td>
             </tr>{% endfor %}
